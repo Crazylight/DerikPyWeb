@@ -28,5 +28,9 @@ def hello():
        return redirect(url_for('index'))
 
 
+@app.route("/derik")
+def hello_world():
+    return "Derik say Hello to You."
+
 if __name__ == '__main__':
    app.run()
