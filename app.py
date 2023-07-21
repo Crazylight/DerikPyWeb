@@ -1,5 +1,7 @@
 import os
 
+from OpenAI import aichat
+
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
@@ -31,6 +33,12 @@ def hello():
 @app.route("/derik")
 def hello_world():
     return "Derik say Hello to You."
+
+@app.route("/chat")
+def chat(question):
+    charter = aichat.charter()
+    print(charter.chat(aichat))
+
 
 if __name__ == '__main__':
    app.run()
