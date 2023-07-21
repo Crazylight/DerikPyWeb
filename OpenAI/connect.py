@@ -7,7 +7,7 @@ openai.api_base =  'https://derikopenai.openai.azure.com'
 openai.api_type = 'azure' # Necessary for using the OpenAI library with Azure OpenAI
 openai.api_version = '2023-05-15' # Latest / target version of the API
 
-engine_name = 'DerikOpenAI' # SDK calls this "engine", but naming
+
 #                                            # it "deployment_name" for clarity
 #engine_name="gpt-35-turbo", # The deployment name you chose when you deployed the GPT-35-Turbo or GPT-4 model.
 engine_name ="DerikOpenAIModel"
