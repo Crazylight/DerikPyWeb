@@ -1,33 +1,33 @@
-# # Add OpenAI library
-# import openai
-
-# openai.api_key = '<YOUR_API_KEY>'
-# openai.api_base =  '<YOUR_ENDPOINT_NAME>' 
-# openai.api_type = 'azure' # Necessary for using the OpenAI library with Azure OpenAI
-# openai.api_version = '20xx-xx-xx' # Latest / target version of the API
-
-# deployment_name = '<YOUR_DEPLOYMENT_NAME>' # SDK calls this "engine", but naming
-#                                            # it "deployment_name" for clarity
-
-import os
+# Add OpenAI library
 import openai
-openai.api_type = "azure"
-openai.api_version = "2023-05-15" 
-openai.api_key = os.getenv("97334e220c0247beb7bb2504b0fa1f94")
-openai.api_base = os.getenv("henrik-openai-chatgpt")  # Your Azure OpenAI resource's endpoint value.
+from urllib import parse
+
+openai.api_key = '635ab39507ab4d3290e11157ec2e9f01'
+openai.api_base =  'https://derikopenai.openai.azure.com' 
+openai.api_type = 'azure' # Necessary for using the OpenAI library with Azure OpenAI
+openai.api_version = '2023-05-15' # Latest / target version of the API
+
+engine_name = 'DerikOpenAI' # SDK calls this "engine", but naming
+#                                            # it "deployment_name" for clarity
+#engine_name="gpt-35-turbo", # The deployment name you chose when you deployed the GPT-35-Turbo or GPT-4 model.
+engine_name ="DerikOpenAIModel"
+
+question = "Who were the founders of Microsoft?"
 
 response = openai.ChatCompletion.create(
-    # engine="gpt-35-turbo", # The deployment name you chose when you deployed the GPT-35-Turbo or GPT-4 model.
-    engine = "Henrik-OpenAI-ChatGPT",
+    
+    engine = engine_name,
+    
     messages=[
         {"role": "system", "content": "Assistant is a large language model trained by OpenAI."},
-        {"role": "user", "content": "Who were the founders of Microsoft?"}
+        {"role": "user", "content": question}
     ]
 )
 
 print(response)
 
 print(response['choices'][0]['message']['content'])
+
 
 # import os
 # import openai
