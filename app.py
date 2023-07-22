@@ -36,7 +36,7 @@ def hello_world():
 
 
 @app.route('/chatpage')
-def tochat():
+def chatpage():
    print("request for chatpage.")
    return render_template('chatpage.html')
    
@@ -59,7 +59,7 @@ def chat():
 
 
 @app.route("/darling", methods=['POST'])
-def chat():
+def darling():
     conditions = request.form.get('conditions')
     if conditions:
 
