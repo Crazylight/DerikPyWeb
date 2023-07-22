@@ -49,3 +49,20 @@ print(response['choices'][0]['message']['content'])
 
 #     conversation.append({"role": "assistant", "content": response["choices"][0]["message"]["content"]})
 #     print("\n" + response['choices'][0]['message']['content'] + "\n")
+
+
+# #Note: The openai-python library support for Azure OpenAI is in preview.
+# import os
+# import openai
+# openai.api_type = "azure"
+# openai.api_base = "https://derikopenai.openai.azure.com/"
+# openai.api_version = "2023-06-01-preview"
+# openai.api_key = os.getenv("OPENAI_API_KEY")
+
+# response = openai.Image.create(
+#     prompt='USER_PROMPT_GOES_HERE',
+#     size='1024x1024',
+#     n=1
+# )
+
+# image_url = response["data"][0]["url"]

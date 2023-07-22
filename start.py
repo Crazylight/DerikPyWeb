@@ -35,7 +35,7 @@ def hello_world():
 
 
 
-@app.route('/tochat')
+@app.route('/chatpage')
 def tochat():
    print("request for chatpage.")
    return render_template('chatpage.html')

@@ -1,0 +1,11 @@
+/.vs
+/.vscode
+/.github
+
+obj
+bin
+log
+__pycache__
+
+/packages
+/__pycache__
