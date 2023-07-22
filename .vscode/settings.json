@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/894d752f-71bc-4bd2-b2d8-1db34696e9ba/resourceGroups/WebApp/providers/Microsoft.Web/sites/DerikWeb",
+    "appService.deploySubpath": "."
+}

@@ -1,5 +1,6 @@
 import os
 
+from OpenAI import aichat
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
@@ -37,6 +38,22 @@ def hello():
 @app.route("/derik")
 def hello_world():
     return "Derik say Hello to You."
+
+@app.route("/chat", methods=['POST'])
+def chat():
+    question = request.form.get('question')
+    if question:
+
+        print(question)
+
+        charter = aichat.charter()
+        answer = charter.chat(question)
+        print(answer)
+        return render_template('chatpage.html', answer=answer)
+    else:
+        print("There is no quest.")
+        return render_template('chatpage.html', answer="There is no question. Please input a question")
+
 
 if __name__ == '__main__':
     app.run()
