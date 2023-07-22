@@ -39,7 +39,7 @@ def hello_world():
 def tochat():
    print("request for chatpage.")
    return render_template('chatpage.html')
-
+   
 
 @app.route("/chat", methods=['POST'])
 def chat():
@@ -55,6 +55,25 @@ def chat():
     else:
         print("There is no quest.")
         return render_template('chatpage.html', answer="There is no question. Please input a question")
+
+
+
+@app.route("/darling", methods=['POST'])
+def chat():
+    conditions = request.form.get('conditions')
+    if conditions:
+
+        print(conditions)
+
+        charter = aichat.charter()
+        answer = charter.chat(conditions)
+        print(answer)
+        return render_template('chatpage.html', conditions=conditions)
+    else:
+        print("There is no conditions.")
+        return render_template('chatpage.html', answer="There is no conditions. Please input a conditions")
+
+
 
 
 if __name__ == '__main__':
