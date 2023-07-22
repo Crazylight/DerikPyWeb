@@ -1,6 +1,7 @@
 import os
-
 from OpenAI import aichat
+
+
 from flask import (Flask, redirect, render_template, request,
                    send_from_directory, url_for)
 
@@ -29,16 +30,16 @@ def hello():
        return redirect(url_for('index'))
 
 
-@app.route("/sayhello")
+@app.route("/derik")
 def hello_world():
     return "Derik say Hello to You."
-
 
 
 @app.route('/chatpage')
 def tochat():
    print("request for chatpage.")
    return render_template('chatpage.html')
+
 
 @app.route("/chat", methods=['POST'])
 def chat():
@@ -60,4 +61,4 @@ if __name__ == '__main__':
     try:
         app.run()
     except Exception as e:
-        print(e.message)
+        print(e)
