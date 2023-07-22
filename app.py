@@ -12,12 +12,6 @@ def index():
    print('Request for index page received')
    return render_template('index.html')
 
-
-@app.route('/tochat')
-def tochat():
-   print("request for chatpage.")
-   return render_template('chatpage.html')
-
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
@@ -35,9 +29,16 @@ def hello():
        return redirect(url_for('index'))
 
 
-@app.route("/derik")
+@app.route("/sayhello")
 def hello_world():
     return "Derik say Hello to You."
+
+
+
+@app.route('/tochat')
+def tochat():
+   print("request for chatpage.")
+   return render_template('chatpage.html')
 
 @app.route("/chat", methods=['POST'])
 def chat():
