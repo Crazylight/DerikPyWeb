@@ -1,0 +1,42 @@
+<!doctype html>
+
+<head>
+
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% extends 'common.html'  %}
+
+    <title>{% block title %}home{% endblock%}</title>
+
+</head>
+
+<html>
+
+   <body>
+
+   
+
+    {% block container%}
+
+    <div class="container">
+        <div style="margin: 50px; font-size:30px; vertical-align: middle;">
+            <p>
+                Welcome to  Derik Website.
+            </p>
+        </div>
+
+    </div>
+
+    {% endblock%}
+
+ 
+
+   </body>
+
+</html>
+
+ 

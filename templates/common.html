@@ -1,0 +1,68 @@
+
+<!doctype html>
+
+ 
+
+<head>
+
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/style.css') }}">
+
+    <title>{% block title%}Title{% endblock %}</title>
+
+</head>
+
+<html>
+
+   <body>
+
+   <div>
+
+ 
+
+    {% block header %}
+
+        <div class="header">
+
+            <ul>
+
+                <li><a href="homepage">首页</a></li>
+
+                <li><a href="webpage">Chat</a></li>
+
+                <li><a href="#">Draw</a></li>
+
+                <li><a href="#">Others</a></li>
+
+                <li><a href="#">联系我们</a></li>
+
+            </ul>
+
+        </div>
+
+    {% endblock %}
+
+    {% block container%}
+
+    <div> this is business content</div>
+
+{% endblock%}
+
+ 
+
+        {% block fotter%}
+
+    <div class="footer copyright">
+
+        copyright@crazylight
+
+    </div>
+
+{% endblock%}</div>
+
+   </body>
+
+</html>

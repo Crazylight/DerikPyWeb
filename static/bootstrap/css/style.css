@@ -1,0 +1,7 @@
+.header,.footer{height:35px;width:100%;margin:0 auto;background:#333;color:#f0f0f0;}
+
+.header li{list-style:none;display:inline;width:300px;margin:5px 20px;}
+
+.container{min-height: 800px;width:100%;border:0px solid #f30;}
+
+.footer{font-size:12px;text-align:center;height:20px;}

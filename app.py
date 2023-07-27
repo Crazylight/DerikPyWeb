@@ -7,12 +7,6 @@ from flask import (Flask, redirect, render_template, request,
 
 app = Flask(__name__)
 
-
-@app.route('/')
-def index():
-   print('Request for index page received')
-   return render_template('index.html')
-
 @app.route('/favicon.ico')
 def favicon():
     return send_from_directory(os.path.join(app.root_path, 'static'),
@@ -30,15 +24,16 @@ def hello():
        return redirect(url_for('index'))
 
 
-@app.route("/derik")
-def hello_world():
-    return "Derik say Hello to You."
-
-
-@app.route('/chatpage')
-def chatpage():
+@app.route('/webpage')
+def webpage():
    print("request for chatpage.")
-   return render_template('chatpage.html')
+   return render_template('webpage.html')
+
+@app.route('/')
+@app.route('/homepage')
+def homepage():
+   print("request for chatpage.")
+   return render_template('homepage.html')
    
 
 @app.route("/chat", methods=['POST'])
@@ -51,10 +46,10 @@ def chat():
         charter = aichat.charter()
         answer = charter.chat(question)
         print(answer)
-        return render_template('chatpage.html', answer=answer)
+        return render_template('webpage.html', answer=answer)
     else:
         print("There is no quest.")
-        return render_template('chatpage.html', answer="There is no question. Please input a question")
+        return render_template('webpage.html', answer="There is no question. Please input a question")
 
 
 

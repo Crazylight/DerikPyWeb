@@ -1,0 +1,73 @@
+<!doctype html>
+
+<head>
+
+    <meta charset="UTF-8"/>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {% extends 'common.html'  %}
+
+    <title>{% block title %}Welcome{% endblock%}</title>
+
+</head>
+
+<html>
+
+   <body>
+
+   
+
+    {% block container%}
+
+    <div class="container">
+
+        <!-- <div style="width:10px; min-height:600px;border:1px;">
+
+
+
+                Navigation
+
+        </div> -->
+
+        <div style="min-height: 780px; min-width: 600px;">
+
+        <form method="post" action="{{url_for('chat')}}">
+
+            <div class="col-md-6 text-left margin-left:1">                
+
+                <div  style="min-width: 380px; min-height: 556px;">
+
+                    <h1 class="h4 fw-bold">>>> {{answer}}</h1>
+
+                </div>
+
+                <div class="d-grid gap-2 d-sm-flex justify-content-sm-left align-items-left my-1">
+
+                   
+
+                    <input type="text" alt="input your question" class="form-control" id="question" name="question" style="min-width: 380px; max-width: 556px;"/>
+
+                   <button type="submit" class="button">发送</button>
+
+                </div>
+
+            </div>
+
+        </form>
+
+        </div>
+
+    </div>
+
+    {% endblock%}
+
+ 
+
+   </body>
+
+</html>
+
+ 
